@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<style type="text/css">
+    body {
+        font-family: sans-serif; width: 800px; margin: 0 auto; padding: 10px;
+    }
+    error {
+        color: red;
+    }
+    label {
+        display: block; font-size: 20px;
+    }
+    input[type=text] {
+        width: 400px; font-size: 20px; padding: 2px;
+    }
+    textarea {
+        width: 400px; height: 200px; font-size: 17px; font-family: monospace;
+    }
+    input[type=submit] {
+        font-size: 24px;
+    }
+    hr {
+        margin: 20px auto;
+    }
+
+    .art + .art {
+        margin-top: 20px;
+    }
+    .art-subject {
+        font-weight: bold; font-size: 20px;
+    }
+    .art-body {
+        margin: 0; font-size: 17px;
+}
+	.post-title {
+
+        font-weight: bold; font-size: 20px;
+	}
+	.post-date {
+
+	    right: 0px;
+	    bottom: 0px;
+    	color: #999;
+
+	}
+
+
+
+</style>
+
+
+
+
+<html>
+  <head>
+
+	<a href="/blog" class="art-subject">
+    	DJ's BLOG
+	</a> <br>
+	<a href="/blog/newpost" class="art-subject">
+    	Create New Post
+	  </a>
+		  
+
+    <style type="text/css">
+      .label {text-align: right}
+      .error {color: red}
+    </style>
+
+  </head>
+
+<body>
+	<h2>MY BLOGS</h2>
+
+
+	{% for blog in blogs %}
+	<hr>
+	
+	<a href="/blog/{{blog.key().id()}}" class="art-subject">
+			{{blog.subject}}</a>
+
+	<div><h3>{{blog.content}}<br></h4></div>
+	<div><i>Date {{blog.created}}</i></div>
+	</hr>
+	{% endfor %}
+
+		<br>
+  </body>
+
+</html>

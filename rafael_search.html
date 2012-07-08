@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Disease Database</h2>
+
+    <table border="1">
+    <tr>
+    <th>Select </th>
+    <th>ID </th>
+    <th>Name </th>
+    <th>PoD </th>
+    <th>Symptom </th>
+    <th>PoS </th>
+    <th>PoSgD </th>
+    </tr>
+    {% for disease in diseases %}
+    <form>
+    <tr>
+    <td>{{disease.selected}}      </td>
+    <td>{{disease.key().id()}}      </td>
+    <td>{{disease.name}}      </td>
+    <td>{{disease.PoD}}       </td>
+    <td>{{disease.symptom}}   </td>
+    <td>{{disease.PoS}}     </td>
+    <td>{{disease.PoSgD}}     </td>
+    </tr>
+
+  {% endfor %}
+
+    </table>
+
+{% endblock %}
